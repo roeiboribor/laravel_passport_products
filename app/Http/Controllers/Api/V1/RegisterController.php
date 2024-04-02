@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\RegisterUser\StoreRequest;
+use App\Http\Requests\Authentication\RegisterStoreRequest;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -16,7 +16,7 @@ class RegisterController extends Controller
         'message' => 'Oops Something went wrong!'
     ];
 
-    public function store(StoreRequest $request): JsonResponse
+    public function store(RegisterStoreRequest $request): JsonResponse
     {
         try {
             $data = $request->validated();
